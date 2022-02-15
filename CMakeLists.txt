@@ -6,6 +6,8 @@ cmake_minimum_required(VERSION 3.5...3.16)
 
 project(boost_context VERSION "${BOOST_SUPERPROJECT_VERSION}" LANGUAGES CXX)
 
+include(cmake/pkg.cmake)
+
 # Build features
 
 ## Binary format
@@ -195,16 +197,7 @@ add_library(Boost::context ALIAS boost_context)
 
 target_include_directories(boost_context PUBLIC include)
 
-target_link_libraries(boost_context
-  PUBLIC
-    Boost::assert
-    Boost::config
-    Boost::core
-    Boost::mp11
-    Boost::pool
-    Boost::predef
-    Boost::smart_ptr
-)
+target_link_libraries(boost_context PUBLIC boost)
 
 target_compile_definitions(boost_context
   PUBLIC BOOST_CONTEXT_NO_LIB

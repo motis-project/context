@@ -1,2 +1,5 @@
 *~
 *.swp
+/cmake-build*
+/deps
+.pkg.mutex
